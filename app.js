@@ -46,6 +46,20 @@ app.post("/compose", function(req, res){
     res.redirect('/');
 });
 
+app.get('/post/:postName', (req, res) => {
+    const requestedTitle = req.params.postName;
+
+    posts.forEach(function(post){
+        const sortedTitle = post.Title;
+
+        if (requestedTitle === sortedTitle){
+            console.log("true");
+        } else{
+            console.log("false");
+        }
+    })
+    
+})
 
 
 
